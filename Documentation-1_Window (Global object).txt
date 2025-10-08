@@ -1,0 +1,81 @@
+JavaScript-এ window হলো একটি global object, যা ব্রাউজারে পুরো ওয়েব পেজকে উপস্থাপন করে। এটি সব ব্রাউজার API (যেমন alert, prompt, confirm ইত্যাদি), DOM, এবং অন্যান্য ফাংশনের access দেয়।
+ window অবজেক্টের প্রায় সব গুরুত্বপূর্ণ methods — বাংলা ব্যাখ্যার সাথে:
+
+
+
+
+1. Interaction Methods (ইউজার ইন্টারঅ্যাকশন)
+
+ | Method                     | Description (বাংলা)                       |
+| -------------------------- | ----------------------------------------- |
+| `alert(message)`           | ইউজারকে বার্তা দেখায় (OK বাটন সহ পপ-আপ)   |
+| `prompt(message, default)` | ইউজার থেকে ইনপুট নেয়                      |
+| `confirm(message)`         | ইউজার থেকে "OK" বা "Cancel" বেছে নিতে বলে |
+
+
+
+
+2. Window Control Methods (উইন্ডো পরিচালনা)
+
+| Method                    | Description                     |
+| ------------------------- | ------------------------------- |
+| `open(URL, name, specs)`  | নতুন ট্যাব বা পপ-আপ উইন্ডো খুলে |
+| `close()`                 | বর্তমান উইন্ডো বন্ধ করে         |
+| `moveTo(x, y)`            | উইন্ডোর অবস্থান পরিবর্তন করে    |
+| `resizeTo(width, height)` | উইন্ডোর আকার পরিবর্তন করে       |
+
+
+
+
+3. Timing Methods (সময় ভিত্তিক ফাংশন)
+
+| Method                     | Description                         |
+| -------------------------- | ----------------------------------- |
+| `setTimeout(func, delay)`  | নির্দিষ্ট সময় পর ফাংশন চালায়        |
+| `setInterval(func, delay)` | বারবার নির্দিষ্ট সময় পর ফাংশন চালায় |
+| `clearTimeout(id)`         | `setTimeout` বন্ধ করে               |
+| `clearInterval(id)`        | `setInterval` বন্ধ করে              |
+
+
+
+
+4. Navigation Methods (নেভিগেশন)
+
+| Method                         | Description                            |
+| ------------------------------ | -------------------------------------- |
+| `window.location.assign(url)`  | নতুন পেজে নিয়ে যায়                     |
+| `window.location.reload()`     | পেজ রিলোড করে                          |
+| `window.location.replace(url)` | ইতিহাস সংরক্ষণ না করে পেজ পরিবর্তন করে |
+| `window.history.back()`        | আগের পেজে ফিরে যায়                     |
+| `window.history.forward()`     | পরের পেজে যায়                          |
+
+
+
+
+5. Developer Methods
+
+| Method            | Description         |
+| ----------------- | ------------------- |
+| `console.log()`   | কনসোলে বার্তা দেখায় |
+| `console.error()` | এরর মেসেজ দেখায়     |
+| `console.warn()`  | সতর্কবার্তা দেখায়   |
+| `console.clear()` | কনসোল পরিষ্কার করে  |
+
+
+
+6. Information Methods
+
+| Method                       | Description                |
+| ---------------------------- | -------------------------- |
+| `window.innerWidth`          | উইন্ডোর ভিতরের প্রস্থ (px) |
+| `window.innerHeight`         | উইন্ডোর ভিতরের উচ্চতা (px) |
+| `window.scrollX` / `scrollY` | স্ক্রল কতটা হয়েছে          |
+
+
+
+
+alert("Welcome to my website!");
+let name = prompt("What's your name?");
+if (confirm("Are you sure?")) {
+    console.log("User confirmed!");
+}
