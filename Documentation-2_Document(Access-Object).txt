@@ -1,0 +1,76 @@
+JavaScript-এ document অবজেক্ট হল window এর অংশ এবং এটি HTML পেজের সাথে যোগাযোগ (Interaction) করার জন্য ব্যবহৃত হয়। DOM (Document Object Model) এর মাধ্যমে আমরা HTML এলিমেন্টকে পড়তে, পরিবর্তন করতে এবং ম্যানিপুলেট করতে পারি।
+
+ document অবজেক্টের গুরুত্বপূর্ণ সকল Methods — বাংলায় ব্যাখ্যা সহ:
+
+
+
+<<<<<----- Document Object-এর Methods------>>>>>
+
+
+1. Element Select করার Methods---->>>
+| Method                          | Description (বাংলা)                                       |
+| ------------------------------- | --------------------------------------------------------- |
+| `getElementById(id)`            | নির্দিষ্ট `id`-যুক্ত এলিমেন্ট খুঁজে আনে                   |
+| `getElementsByClassName(class)` | নির্দিষ্ট `class`-এর সব এলিমেন্ট এনে দেয় (HTMLCollection) |
+| `getElementsByTagName(tag)`     | নির্দিষ্ট ট্যাগ নামের সব এলিমেন্ট দেয়                     |
+| `querySelector(cssSelector)`    | CSS selector অনুযায়ী প্রথম matching এলিমেন্ট আনে         |
+| `querySelectorAll(cssSelector)` | সব matching এলিমেন্ট (NodeList আকারে) আনে                 |
+
+
+
+2. Content পড়া/পরিবর্তনের Methods---->>>>
+| Method                 | Description                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| `document.write(text)` | ডকুমেন্টে সরাসরি টেক্সট লেখে (পুরো পেজ overwrite করতে পারে!) |
+| `element.innerHTML`    | এলিমেন্টের HTML কনটেন্ট পড়ে বা সেট করে                      |
+| `element.textContent`  | শুধুমাত্র টেক্সট পড়ে বা সেট করে                             |
+| `element.innerText`    | দেখা টেক্সট পড়ে বা সেট করে (CSS অনুসারে)                    |
+
+
+
+3. Element Create ও Manipulate করার Methods---->>>>
+| Method                           | Description                                     |
+| -------------------------------- | ----------------------------------------------- |
+| `createElement(tagName)`         | নতুন HTML এলিমেন্ট তৈরি করে                     |
+| `createTextNode(text)`           | নতুন টেক্সট নোড তৈরি করে                        |
+| `appendChild(node)`              | একটি এলিমেন্টের মধ্যে নতুন নোড/এলিমেন্ট যোগ করে |
+| `removeChild(node)`              | একটি এলিমেন্টের কোনো চাইল্ড সরিয়ে দেয়           |
+| `replaceChild(newNode, oldNode)` | পুরনো নোডের জায়গায় নতুন নোড বসায়              |
+| `cloneNode(deep)`                | এলিমেন্টের কপি তৈরি করে                         |
+
+
+
+
+4. Form ও Input নিয়ন্ত্রণ---->>>>
+| Method                              | Description                        |
+| ----------------------------------- | ---------------------------------- |
+| `getElementById("formId").submit()` | ফর্ম সাবমিট করে                    |
+| `getElementById("formId").reset()`  | ফর্ম রিসেট করে (সব ফিল্ড ক্লিয়ার) |
+| `element.focus()`                   | কোনো input ফিল্ডে ফোকাস আনে        |
+| `element.blur()`                    | ফোকাস সরিয়ে নেয়                    |
+
+
+
+
+5. Document Properties and Info---->>>>
+| Property/Method       | Description                                         |
+| --------------------- | --------------------------------------------------- |
+| `document.title`      | পেজের টাইটেল পড়ে বা সেট করে                        |
+| `document.URL`        | কারেন্ট পেজের URL                                   |
+| `document.domain`     | ডোমেইন নাম                                          |
+| `document.body`       | `<body>` এলিমেন্টে একসেস                            |
+| `document.head`       | `<head>` এলিমেন্টে একসেস                            |
+| `document.cookie`     | কুকি পড়া বা সেট করা যায়                            |
+| `document.readyState` | Document লোড স্টেট (loading, interactive, complete) |
+
+
+
+document object-এর সাহায্যে তুমি JavaScript দিয়ে HTML DOM-এ যা খুশি তাই করতে পারো — লেখা পড়া, লেখা পরিবর্তন, নতুন কিছু যোগ বা মুছে ফেলা ইত্যাদি।
+
+
+
+<h1 id="heading">Hello</h1>
+<script>
+  let h = document.getElementById("heading");
+  h.innerText = "Welcome to JavaScript!";
+</script>
